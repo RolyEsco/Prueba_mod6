@@ -28,4 +28,4 @@ jobs:
         run: cat inicio.php
 
       - name: Acceder al portal Oficina 2
-        run: curl http://localhost:8080/inicio.php
+        run: curl http://localhost:8080
