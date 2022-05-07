@@ -1,0 +1,35 @@
+name: Ejercicio_2
+on:
+  push:
+    branches:
+      - main
+jobs:
+  configuracion:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out del repositorio
+        uses: actions/checkout@v2    
+      - name: mensaje
+        run: echo "Job en proceso" 
+      - name: tiempo de espera
+        run: sleep 3 
+  construccion:
+    needs: configuracion  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out del repositorio
+        uses: actions/checkout@v2    
+      - name: mensaje
+        run: echo "Job en proceso" 
+      - name: tiempo de espera
+        run: sleep 3 
+  prueba:
+    needs: construccion  
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out del repositorio
+        uses: actions/checkout@v2    
+      - name: mensaje
+        run: echo "Job en proceso" 
+      - name: tiempo de espera
+        run: sleep 3 
