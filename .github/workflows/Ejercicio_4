@@ -1,0 +1,30 @@
+name: Ejercicio_4
+
+on:
+  push:
+    branches:
+      - main
+jobs:    
+  
+  Crear aplicacion php:
+  
+    runs-on: ubuntu-latest
+  
+    services:
+      servidor-apache:
+        image: httpd:latest
+        ports:
+           - 8080:80
+
+    steps:
+      - name: ver carpeta actual
+        run: pwd
+
+      - name: crear archivo php
+        run: echo "<h3>Hola Mundo</3>" > /var/www/html/inicio.php
+        
+      - name: ver archivo inicio.php
+        run: cat /var/www/html/inicio.php
+
+      - name: Acceder al portal Oficina 2
+        run: curl http://localhost:8080
