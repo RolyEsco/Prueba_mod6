@@ -21,7 +21,7 @@ jobs:
         run: pwd
         
       - name: ver carpeta actual
-        run: cd /var/wwww/html
+        run: cd /var/www/html
         
       - name: crear archivo php
         run: echo "<h3>Hola Mundo</3>" > inicio.php
