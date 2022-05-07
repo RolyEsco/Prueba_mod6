@@ -1,34 +1,34 @@
-name: Ejercicio_5
+name: Ejercicio_4
 
 on:
   push:
     branches:
-      - main44
-jobs:
-  vm01:
+      - main
+jobs:    
+  
+  Crear-aplicacion-php:
+  
     runs-on: ubuntu-latest
+  
+    services:
+      servidor_apache:
+        image: httpd:latest
+        ports:
+           - 8080:80
+
     steps:
-      - name: Mensaje de inicio
-        run: echo "Iniciando Maquina Virtual 1"
-      - name: Ejecución de la configuracion
-        run: sudo lshw
-      - name: Detalles de red
-        run: ip a
-  vm02:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Mensaje de inicio
-        run: echo "Iniciando Maquina Virtual 2"
-      - name: Ejecución de la configuracion
-        run: sudo lshw
-      - name: Detalles de red
-        run: ip a
-  vm03:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Mensaje de inicio
-        run: echo "Iniciando Maquina Virtual 3"
-      - name: Ejecución de la configuracion
-        run: sudo lshw
-      - name: Detalles de red
-        run: ip a
+       
+      - name: ingresar carpeta html
+        run: cd /var/www/html
+        
+      - name: crear archivo php
+        run: sudo echo "<h3>Hola Mundo</3><p><?php echo 'Hora del sistema '.date('d-m-Y');?></p>" > inicio.php
+        
+      - name: ver archivo inicio.php
+        run: sudo cat inicio.php
+
+      - name: ver permisos
+        run: ls -l
+        
+      - name: Acceder al portal Oficina 2
+        run: sudo curl http://localhost:8080/inicio.php
