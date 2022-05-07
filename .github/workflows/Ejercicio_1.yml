@@ -3,7 +3,7 @@ name: Ejercicio_1
 on:
   push:
     branches:
-      - main
+      - main2
 
 jobs:    
   ejercicio-1:
