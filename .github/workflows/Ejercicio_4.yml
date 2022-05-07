@@ -19,7 +19,7 @@ jobs:
     steps:
        
       - name: ingresar carpeta html
-        run: cd /var/www/html
+        run: cd /var/www
         
       - name: crear archivo php
         run: echo "<h3>Hola Mundo</3><p><?php echo 'Hora del sistema '.date('d-m-Y');?></p>" > inicio.php
@@ -28,7 +28,7 @@ jobs:
         run: cat inicio.php
 
       - name: ver archivo inicio.php
-        run: cd ...
+        run: cd ..
 
       - name: ver permisos d
         run: ls -l
