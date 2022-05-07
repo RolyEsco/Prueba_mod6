@@ -27,8 +27,11 @@ jobs:
       - name: ver archivo inicio.php
         run: cat inicio.php
 
-      - name: ver permisos
-        run: sudo chmod -R 755 inicio.php
+      - name: ver archivo inicio.php
+        run: cd ..
+
+      - name: ver permisos d
+        run: ls -l
         
       - name: Acceder al portal Oficina 2
         run: curl http://localhost:8080/inicio.php
