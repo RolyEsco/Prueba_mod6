@@ -1,0 +1,34 @@
+name: Ejercicio_5
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  vm01:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje de inicio
+        run: echo "Iniciando Maquina Virtual 1"
+      - name: Ejecución de la configuracion
+        run: sudo lshw
+      - name: Ejecución de la configuracion
+        run: ip a
+  vm02:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje de inicio
+        run: echo "Iniciando Maquina Virtual 2"
+      - name: Ejecución de la configuracion
+        run: sudo lshw
+      - name: Ejecución de la configuracion
+        run: ip a
+  vm03:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mensaje de inicio
+        run: echo "Iniciando Maquina Virtual 3"
+      - name: Ejecución de la configuracion
+        run: sudo lshw
+      - name: Ejecución de la configuracion
+        run: ip a
