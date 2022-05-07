@@ -17,17 +17,15 @@ jobs:
            - 8080:80
 
     steps:
-      - name: ver carpeta actual
-        run: pwd
-        
-      - name: ver carpeta actual
+       
+      - name: ingresar carpeta html
         run: cd /var/www/html
         
       - name: crear archivo php
-        run: echo "<h3>Hola Mundo</3>" > inicio.php
+        run: echo "<h3>Hola Mundo</3><p><?php echo 'Hora del sistema '.date('d-m-Y');?></p>" > inicio.php
         
       - name: ver archivo inicio.php
         run: cat inicio.php
 
       - name: Acceder al portal Oficina 2
-        run: curl http://localhost:8080
+        run: curl http://localhost/inicio.php:8080
