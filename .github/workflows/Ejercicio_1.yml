@@ -1,0 +1,41 @@
+name: Ejercicio_1
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:    
+  comandos-basicos:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Step 1 
+        run: echo "archivo 1" > file1.txt
+        
+      - name: Step 2 
+        run: echo "archivo 2" > file2.txt
+
+      - name: Step 3
+        run: echo "archivo 3" > file3.txt
+        
+      - name: Step 4
+        run: echo "archivo 4" > file4.txt
+        
+      - name: Step 5
+        run: echo "archivo 5" > file5.txt
+        
+      - name: step 6 - Creacion del artefacto ZIP
+        uses: papeloto/action-zip@v1
+        with:
+          files: file1.txt file2.txt
+          dest: files.zip
+       
+      - name: step 7 - Verificacion de la creacion del arefactos ZIP
+        run: ls -la
+
+      - name: step 8 Upload Artifacto
+        uses: actions/upload-artifact@v3
+        with:
+          name: Archivos
+          path: files.zip
