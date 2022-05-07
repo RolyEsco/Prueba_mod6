@@ -6,7 +6,7 @@ on:
       - main
 jobs:    
   
-  Crear aplicacion php:
+  Crear-aplicacion-php:
   
     runs-on: ubuntu-latest
   
