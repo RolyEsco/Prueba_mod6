@@ -28,7 +28,7 @@ jobs:
         run: cat inicio.php
 
       - name: ver archivo inicio.php
-        run: cd ..
+        run: cd ...
 
       - name: ver permisos d
         run: ls -l
