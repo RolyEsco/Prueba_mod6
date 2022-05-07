@@ -18,10 +18,10 @@ jobs:
 
     steps:
        
-      - name: ingresar carpeta html
+      - name: otorgar permisos
         run: sudo chmod -R 777 /var/www/html
        
-      - name: ingresar carpeta htmls
+      - name: ingresar carpeta html
         run: cd /var/www/html
         
       - name: crear archivo php
@@ -29,9 +29,12 @@ jobs:
         
       - name: ver archivo inicio.php
         run: sudo cat inicio.php
+        
+      - name: otorgar permisos
+        run: sudo chmod -R 777 inicio.php
 
       - name: ver permisos
         run: ls -l
         
-      - name: Acceder al portal Oficina 2
+      - name: Acceder a la pagina
         run: sudo curl http://localhost:8080/inicio.php
