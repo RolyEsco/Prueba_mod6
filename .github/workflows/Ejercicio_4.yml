@@ -20,6 +20,8 @@ jobs:
        
       - name: ingresar carpeta html
         run: sudo chmod -R 777 /var/www/html
+       
+      - name: ingresar carpeta htmls
         run: cd /var/www/html
         
       - name: crear archivo php
