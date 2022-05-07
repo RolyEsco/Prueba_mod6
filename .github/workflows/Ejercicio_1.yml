@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:    
-  comandos-basicos:
+  ejercicio-1:
     runs-on: ubuntu-latest
     steps:
 
@@ -28,7 +28,7 @@ jobs:
       - name: step 6 - Creacion del artefacto ZIP
         uses: papeloto/action-zip@v1
         with:
-          files: file1.txt file2.txt
+          files: file1.txt file2.txt file3.txt file4.txt file5.txt
           dest: files.zip
        
       - name: step 7 - Verificacion de la creacion del arefactos ZIP
