@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
   
     services:
-      portal-oficina01:
+      servidor_apache:
         image: httpd:latest
         ports:
            - 8080:80
@@ -19,12 +19,15 @@ jobs:
     steps:
       - name: ver carpeta actual
         run: pwd
-
+        
+      - name: ver carpeta actual
+        run: cd /var/wwww/html
+        
       - name: crear archivo php
-        run: echo "<h3>Hola Mundo</3>" > /var/www/html/inicio.php
+        run: echo "<h3>Hola Mundo</3>" > inicio.php
         
       - name: ver archivo inicio.php
-        run: cat /var/www/html/inicio.php
+        run: cat inicio.php
 
       - name: Acceder al portal Oficina 2
         run: curl http://localhost:8080
